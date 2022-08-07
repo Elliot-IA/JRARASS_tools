@@ -844,6 +844,8 @@ function executeAddCat(){
     document.getElementById("data_hiddenInput").value = JSON.stringify(catagories);
     document.getElementById("hiddenForm").submit();*/
 
+    breakAllLoopLayers = false;
+    
     document.getElementById("branchInput").value = "Focus to select from map";
     document.getElementById("branchInput").style.color = "#aaaaaa";
     document.getElementById("newCatInput").value = "";
