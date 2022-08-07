@@ -642,7 +642,7 @@ function storeImage(name, URI, type){
             }
         });
     }else if(type == "locImg"){
-        astrasystem.collection("LOCATION_Images").insertOne({
+        astrasystem_client.db("JunkLord").collection("LOCATION_Images").insertOne({
             name:name,
             uri: URI
         },(error, data)=>{
