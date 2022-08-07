@@ -343,7 +343,7 @@ document.addEventListener('keydown', event => {
             if(newLocCreationStep == "newLoc_branch"){
                 newLoc_branch = document.getElementById("locCreateInput").value;
                 locationExists = false;
-                if(newLoc_branch == "Full House"){ //The search doesn't include the outer-most location entry (full house)  
+                if(newLoc_branch == "UMN Campus"){ //The search doesn't include the outer-most location entry (full house)  
                     locationExists = true;
                     foundLocIndex = locations;
                 }else{
