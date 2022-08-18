@@ -263,7 +263,7 @@ function configureStandby(){
         });
     });
     app.get("/getLOCATIONS", function(req, res){
-        astrasystem_client.db("JunkLord").collection("GLOBALS").findOne({name:"locationMap"},(error, data)=>{
+        astrasystem_client.db("Universals").collection("GLOBALS").findOne({name:"locationMap"},(error, data)=>{
             if(data == null){
                 console.log("-<>-(!) count not fetch LOCATIONS!");
             }else{
@@ -503,7 +503,7 @@ function updateLocArray(newLocArray){
     LOC_content = LOC_array.join("\n");
     fs.writeFileSync("./Data_Files/LOCATIONS.js", LOC_content);*/
     LOCATIONS = newLocArray;
-    astrasystem_client.db("JunkLord").collection("GLOBALS").updateOne({name: "locationMap"}, {$set: {data: newLocArray}}).then((err,data)=>{
+    astrasystem_client.db("Universals").collection("GLOBALS").updateOne({name: "locationMap"}, {$set: {data: newLocArray}}).then((err,data)=>{
         console.log("Loc Array Updated! Is now: "+LOCATIONS);    
     });    //DB
 }
