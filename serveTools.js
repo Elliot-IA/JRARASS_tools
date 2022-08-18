@@ -79,7 +79,7 @@ function startup(){
 var processedImgs = 0;
 var numImgs = null; 
 function regenerateLocImgs(){
-    astrasystem_client.db("JunkLord").collection("LOCATION_Images").find().toArray((error, imagesArray)=>{
+    astrasystem_client.db("Universals").collection("LOCATION_Images").find().toArray((error, imagesArray)=>{
         numImgs = imagesArray.length;
         console.log("Regenerating Location Images...\t("+numImgs+")");
         imagesArray.forEach((img)=>{
@@ -642,7 +642,7 @@ function storeImage(name, URI, type){
             }
         });
     }else if(type == "locImg"){
-        astrasystem_client.db("JunkLord").collection("LOCATION_Images").insertOne({
+        astrasystem_client.db("Universals").collection("LOCATION_Images").insertOne({
             name:name,
             uri: URI
         },(error, data)=>{
